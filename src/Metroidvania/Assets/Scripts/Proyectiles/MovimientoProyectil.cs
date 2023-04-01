@@ -17,6 +17,7 @@ public class MovimientoProyectil : MonoBehaviour
         {
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             other.gameObject.GetComponent<Renderer>().enabled = false;
+            Destroy(this.gameObject);
         }
 
         else if (other.gameObject.tag == "Ignorar" || other.gameObject.tag == "Player") { } // Ignorar el contacto

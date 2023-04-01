@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 312809214314242135}
   - component: {fileID: 312809214314242137}
   - component: {fileID: 6500665190399574022}
+  - component: {fileID: 2419093835447407994}
   m_Layer: 0
   m_Name: HabilidadClonar
   m_TagString: Ignorar
@@ -124,3 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e026aac82e2b7645b5bea40c8e93ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagen: {fileID: 0}
+--- !u!114 &2419093835447407994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312809214314242133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffaca0ac6f74224f8a9dc756974483c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puerta: {fileID: 0}
+  puertaRenderer: {fileID: 0}
