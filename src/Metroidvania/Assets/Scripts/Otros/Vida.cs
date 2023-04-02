@@ -10,6 +10,7 @@ public class Vida : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            this.GetComponent<Informativo>().informar("Te has curado 20 de vida.");
             personaje.curar(20);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Renderer>().enabled = false;

@@ -11,6 +11,7 @@ public class Puerta : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            this.GetComponent<Informativo>().informar("Has abierto una puerta.");
             puerta.enabled = false;
             puertaRenderer.enabled = false;
             GetComponent<Collider2D>().enabled = false;

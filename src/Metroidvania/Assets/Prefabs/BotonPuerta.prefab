@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4841660807773993189}
   - component: {fileID: 1424130259831419704}
   - component: {fileID: 8070448192450754876}
+  - component: {fileID: 3041692325359239266}
   m_Layer: 0
   m_Name: BotonPuerta
   m_TagString: Ignorar
@@ -126,3 +127,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puerta: {fileID: 0}
   puertaRenderer: {fileID: 0}
+--- !u!114 &3041692325359239266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070448192450754878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f03c58035fac842b13845103ef10b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoInformativo: {fileID: 0}

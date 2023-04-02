@@ -10,15 +10,22 @@ public class MovimientoPersonaje : MonoBehaviour
 
     public Personaje personaje;
     public RuntimeAnimatorController animacionIdle, animacionCorriendo;
-    public static int movimientoHorizontal = 1;
+    public static int movimientoHorizontal = 1, numeroMaximoSaltos = 1;
+    public int numeroSaltos;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        this.numeroSaltos = MovimientoPersonaje.numeroMaximoSaltos;
+    }
 
     void moverPersonaje(bool direccion)
     {
         if (!direccion)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && numeroSaltos > 0)
             {
-                rigidbodyPersonaje.AddForce(Vector2.up * personaje.velocidadVertical);
+                this.rigidbodyPersonaje.AddForce(Vector2.up * this.personaje.velocidadVertical);
+                this.numeroSaltos--;
             }
         }
 
@@ -28,13 +35,18 @@ public class MovimientoPersonaje : MonoBehaviour
             {
                 MovimientoPersonaje.movimientoHorizontal = -1;
 
-                transformPersonaje.localScale = new Vector3(-Mathf.Abs(transformPersonaje.localScale.x), transformPersonaje.localScale.y, transformPersonaje.localScale.z);
-                animatorPersonaje.runtimeAnimatorController = animacionCorriendo;
+                this.transformPersonaje.localScale = new Vector3(
+                    -Mathf.Abs(this.transformPersonaje.localScale.x),
+                    this.transformPersonaje.localScale.y,
+                    this.transformPersonaje.localScale.z
+                    );
 
-                transformPersonaje.position = new Vector3(
-                    transformPersonaje.position.x - personaje.velocidadHorizontal,
-                    transformPersonaje.position.y,
-                    transformPersonaje.position.z
+                this.animatorPersonaje.runtimeAnimatorController = animacionCorriendo;
+
+                this.transformPersonaje.position = new Vector3(
+                    this.transformPersonaje.position.x - this.personaje.velocidadHorizontal,
+                    this.transformPersonaje.position.y,
+                    this.transformPersonaje.position.z
                 );
             }
 
@@ -42,26 +54,31 @@ public class MovimientoPersonaje : MonoBehaviour
             {
                 MovimientoPersonaje.movimientoHorizontal = 1;
 
-                transformPersonaje.localScale = new Vector3(Mathf.Abs(transformPersonaje.localScale.x), transformPersonaje.localScale.y, transformPersonaje.localScale.z);
-                animatorPersonaje.runtimeAnimatorController = animacionCorriendo;
+                this.transformPersonaje.localScale = new Vector3(
+                    Mathf.Abs(this.transformPersonaje.localScale.x),
+                    this.transformPersonaje.localScale.y,
+                    this.transformPersonaje.localScale.z
+                    );
 
-                transformPersonaje.position = new Vector3(
-                    transformPersonaje.position.x + personaje.velocidadHorizontal,
+                this.animatorPersonaje.runtimeAnimatorController = this.animacionCorriendo;
+
+                this.transformPersonaje.position = new Vector3(
+                    transformPersonaje.position.x + this.personaje.velocidadHorizontal,
                     transformPersonaje.position.y,
                     transformPersonaje.position.z
                 );
             }
 
-            else animatorPersonaje.runtimeAnimatorController = animacionIdle;
+            else this.animatorPersonaje.runtimeAnimatorController = animacionIdle;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbodyPersonaje = GetComponent<Rigidbody2D>();
-        animatorPersonaje = GetComponent<Animator>();
-        transformPersonaje = GetComponent<Transform>();
+        this.rigidbodyPersonaje = GetComponent<Rigidbody2D>();
+        this.animatorPersonaje = GetComponent<Animator>();
+        this.transformPersonaje = GetComponent<Transform>();
     }
 
     // Update is called once per frame

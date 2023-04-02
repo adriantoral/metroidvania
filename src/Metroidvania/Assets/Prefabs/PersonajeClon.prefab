@@ -177,6 +177,7 @@ MonoBehaviour:
   personaje: {fileID: 5211284435498256942}
   animacionIdle: {fileID: 9100000, guid: 768d0af0f52d561449bdd4307dfe785a, type: 2}
   animacionCorriendo: {fileID: 9100000, guid: 7e2b2abf3ebfe5547985d4afc6de3d94, type: 2}
+  numeroSaltos: 1
 --- !u!114 &7497316531289235763
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class RomperPuertas : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            this.GetComponent<Informativo>().informar("Ahora puedes romper paredes.");
             imagen.enabled = true;
             Personaje.hasDestructorParedes = true;
             GetComponent<Collider2D>().enabled = false;

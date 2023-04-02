@@ -11,6 +11,7 @@ public class Clonador : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            this.GetComponent<Informativo>().informar("Ahora puedes clonarte " + (Clon.maxClones + 1) + " vez.") ;
             imagen.enabled = true;
             Personaje.hasClone = true;
             Clon.maxClones++;
