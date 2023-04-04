@@ -15,9 +15,19 @@ public class Personaje : MonoBehaviour
         this.vidaMaxima = this.vida;
     }
 
+    private void Update()
+    {
+        if (this.vida <= 0 && this.gameObject.tag == "Player") SceneLoader.cargarMuerte();
+    }
+
     public void curar(int cantidad)
     {
         this.vida += cantidad;
         if (this.vida > this.vidaMaxima) this.vida = this.vidaMaxima;
+    }
+
+    public void herir(int cantidad)
+    {
+        this.vida -= cantidad;
     }
 }

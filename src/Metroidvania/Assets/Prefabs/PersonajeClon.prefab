@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3404943678704642077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4334266492808803783}
+  m_Layer: 0
+  m_Name: PistolaDerecha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4334266492808803783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404943678704642077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.129, y: -0.026, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7110219298322076030}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7110219298322076026
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,10 +46,11 @@ GameObject:
   - component: {fileID: 7110219298322076031}
   - component: {fileID: 5211284435498256942}
   - component: {fileID: 7110219298322076000}
-  - component: {fileID: 7497316531289235763}
+  - component: {fileID: 7110219298322076001}
+  - component: {fileID: 764120757679308733}
   m_Layer: 0
   m_Name: PersonajeClon
-  m_TagString: Player
+  m_TagString: Clon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +66,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4334266492808803783}
+  - {fileID: 3134958275311331392}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,9 +133,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8260fa3e4fbaa204d8ba008dd62c4b27, type: 3}
-  m_Color: {r: 0.44171548, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.9890852, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -139,7 +173,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 768d0af0f52d561449bdd4307dfe785a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -159,9 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295fa8dcf57073241b16ed2d82bb8d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 100
+  vida: 1
   velocidadHorizontal: 0.4
-  velocidadVertical: 400
+  velocidadVertical: 600
 --- !u!114 &7110219298322076000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +211,29 @@ MonoBehaviour:
   personaje: {fileID: 5211284435498256942}
   animacionIdle: {fileID: 9100000, guid: 768d0af0f52d561449bdd4307dfe785a, type: 2}
   animacionCorriendo: {fileID: 9100000, guid: 7e2b2abf3ebfe5547985d4afc6de3d94, type: 2}
+  animacionDisparoCorriendo: {fileID: 9100000, guid: 9421041df194ab44cbbeb14f51c36d0a, type: 2}
+  animacionDisparoQuieto: {fileID: 9100000, guid: 4b105e799b4d0cd44bba23f0cd8269c1, type: 2}
   numeroSaltos: 1
---- !u!114 &7497316531289235763
+--- !u!114 &7110219298322076001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110219298322076026}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb2c8ab3b4f5d448ff396cae188921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  balaDerecha: {fileID: 2161439855095804279, guid: 0e361b55fbb759f4ba86d88eb89bb37d, type: 3}
+  balaIzquierda: {fileID: 2161439855095804279, guid: f60e360a8f9063b4b8148f79e7c4fae1, type: 3}
+  balaDerechaDestruible: {fileID: 2161439855095804279, guid: 0e361b55fbb759f4ba86d88eb89bb37d, type: 3}
+  balaIzquierdaDestruible: {fileID: 2161439855095804279, guid: f60e360a8f9063b4b8148f79e7c4fae1, type: 3}
+  posicionPistolaDerecha: {fileID: 4334266492808803783}
+  posicionPistolaIzquierda: {fileID: 3134958275311331392}
+--- !u!114 &764120757679308733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,3 +245,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14258454e579c7747b82e78954e93a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7170809308220855081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3134958275311331392}
+  m_Layer: 0
+  m_Name: PistolaIzquierda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3134958275311331392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7170809308220855081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.129, y: -0.026, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7110219298322076030}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

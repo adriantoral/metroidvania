@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6952617782360596993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968924042843637358}
+  - component: {fileID: 663720222133535691}
+  - component: {fileID: 1807162107474662822}
+  m_Layer: 0
+  m_Name: SpawnerEnemigo1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968924042843637358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952617782360596993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &663720222133535691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952617782360596993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6deac811a12f540bd2b1ab7c6b0a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aleatorizar: 0
+  prefab: {fileID: 6924913904096050243, guid: 2922465f6727f66439d5bb24900ca815, type: 3}
+  prefabs: []
+  tipoArea: 0
+  areaRectangulo: {x: 50, y: 3}
+  radioCirculo: 7.82
+  enLimitesCirculo: 0
+  tagPuntos: 
+  pasarPorTodos: 0
+  emparentarAGenerador: 0
+  comprobarColisiones: 0
+  radioComprobacion: 1
+  capaComprobacion:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1807162107474662822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952617782360596993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6511b1edb271004fb76915ae76477db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoInicial: 1
+  recurrente: 1
+  tiempoRecurrente: 8
+  iniciarEnAwake: 1
+  alSaltarTemporizador:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 663720222133535691}
+        m_TargetAssemblyTypeName: UP_FuncInstanciacion, Assembly-CSharp
+        m_MethodName: UP_InstanciarObjeto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

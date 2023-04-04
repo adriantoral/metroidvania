@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27582e2b5a9d9cc4890a2d0b03101b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
   velocicadProyectil: 1000
-  personaje: {fileID: 0}

@@ -9,7 +9,7 @@ public class Puerta : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Clon")
         {
             this.GetComponent<Informativo>().informar("Has abierto una puerta.");
             puerta.enabled = false;

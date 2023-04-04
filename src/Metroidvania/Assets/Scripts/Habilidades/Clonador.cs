@@ -9,7 +9,7 @@ public class Clonador : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Clon")
         {
             this.GetComponent<Informativo>().informar("Ahora puedes clonarte " + (Clon.maxClones + 1) + " vez.") ;
             imagen.enabled = true;

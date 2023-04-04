@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovimientoProyectil : MonoBehaviour
 {
+    public int damage;
     public float velocicadProyectil;
 
     private void Awake()
@@ -13,14 +14,20 @@ public class MovimientoProyectil : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "PuertaDestruible" && Personaje.hasDestructorParedes)
+        if (other.gameObject.tag == "Ignorar" || other.gameObject.tag == "Player" || other.gameObject.tag == "Clon" || this.gameObject.tag == "Enemigo") { } // Ignorar el contacto
+
+        else if (other.gameObject.tag == "PuertaDestruible" && Personaje.hasDestructorParedes)
         {
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             other.gameObject.GetComponent<Renderer>().enabled = false;
             Destroy(this.gameObject);
         }
 
-        else if (other.gameObject.tag == "Ignorar" || other.gameObject.tag == "Player") { } // Ignorar el contacto
+        else if (other.gameObject.tag == "Enemigo" && this.gameObject.tag != "Enemigo")
+        {
+            other.GetComponent<Enemigo>().herir(this.damage);
+            Destroy(this.gameObject);
+        }
 
         else Destroy(this.gameObject);
     }

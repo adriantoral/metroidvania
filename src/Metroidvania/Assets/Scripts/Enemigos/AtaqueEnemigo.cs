@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class AtaqueEnemigo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject balaDerecha, balaIzquierda;
 
-    // Update is called once per frame
-    void Update()
+    public void atacar()
     {
-        
+        Instantiate(balaDerecha, this.GetComponent<Transform>().position, Quaternion.identity);
+        Instantiate(balaIzquierda, this.GetComponent<Transform>().position, Quaternion.identity); 
+
     }
 }

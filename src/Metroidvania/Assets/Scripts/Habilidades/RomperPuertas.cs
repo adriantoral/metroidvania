@@ -9,7 +9,7 @@ public class RomperPuertas : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Clon")
         {
             this.GetComponent<Informativo>().informar("Ahora puedes romper paredes.");
             imagen.enabled = true;

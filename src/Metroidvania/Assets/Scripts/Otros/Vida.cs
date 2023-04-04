@@ -8,7 +8,7 @@ public class Vida : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Clon")
         {
             this.GetComponent<Informativo>().informar("Te has curado 20 de vida.");
             personaje.curar(20);
